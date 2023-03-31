@@ -8,9 +8,21 @@ let contador = 0;
 
 //enqunato-loop
 while (contador < listaDeTeclas.length) {
-    listaDeTeclas[contador].onclick = tocaSomPom;
+
+    const tecla = listaDeTeclas[contador];
+
+    const instrumento = tecla.classList[1];
+
+    //templete string
+    const idAudio = `#som_${instrumento}`;
+  
+    //console.log(idAudio);
+
+    tecla.onclick = function () {
+        tocaSom(idAudio);
+    }
 
     contador = contador + 1;
 
-    console.log(contador);
+    //console.log(contador);
 }
